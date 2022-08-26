@@ -13,22 +13,22 @@ function createData(name, trackingId, date, status) {
 }
 
 const rows = [
-  createData("Lasania Chiken Fri", 18908424, "2 March 2022", "Approved"),
-  createData("Big Baza Bang ", 18908424, "2 March 2022", "Pending"),
-  createData("Mouth Freshner", 18908424, "2 March 2022", "Approved"),
-  createData("Cupcake", 18908421, "2 March 2022", "Delivered"),
+  createData("Plan premium gym", 18908424, "2 Agosto 2022", "Aprovado"),
+  createData("Plan Basico", 18908424, "12 Agosto 2022", "Pendiente"),
+  createData("Curso de alimentación", 18908424, "18 Agosto 2022", "Aprovado"),
+  createData("Proteinas B231", 18908421, "30 Julio 2022", "Entregado"),
 ];
 
 
 const makeStyle=(status)=>{
-  if(status === 'Approved')
+  if(status === 'Aprovado')
   {
     return {
       background: 'rgb(145 254 159 / 47%)',
       color: 'green',
     }
   }
-  else if(status === 'Pending')
+  else if(status === 'Pendiente')
   {
     return{
       background: '#ffadad8f',
@@ -46,7 +46,7 @@ const makeStyle=(status)=>{
 export default function BasicTable() {
   return (
       <div className="Table">
-      <h3>Recent Orders</h3>
+      <h3>Ordenes recientes</h3>
         <TableContainer
           component={Paper}
           style={{ boxShadow: "0px 13px 20px 0px #80808029" }}
@@ -54,10 +54,10 @@ export default function BasicTable() {
           <Table sx={{ minWidth: 650 }} aria-label="simple table">
             <TableHead>
               <TableRow>
-                <TableCell>Product</TableCell>
-                <TableCell align="left">Tracking ID</TableCell>
-                <TableCell align="left">Date</TableCell>
-                <TableCell align="left">Status</TableCell>
+                <TableCell>Producto</TableCell>
+                <TableCell align="left">Ticket ID</TableCell>
+                <TableCell align="left">Fecha</TableCell>
+                <TableCell align="left">Estado</TableCell>
                 <TableCell align="left"></TableCell>
               </TableRow>
             </TableHead>
@@ -75,7 +75,7 @@ export default function BasicTable() {
                   <TableCell align="left">
                     <span className="status" style={makeStyle(row.status)}>{row.status}</span>
                   </TableCell>
-                  <TableCell align="left" className="Details">Details</TableCell>
+                  <TableCell align="left" className="Details">Detalles</TableCell>
                 </TableRow>
               ))}
             </TableBody>
